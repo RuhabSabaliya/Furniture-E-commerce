@@ -181,7 +181,7 @@ export default function Home() {
                   <div className="relative overflow-hidden rounded-2xl mb-4 aspect-square bg-gray-50 flex items-center justify-center group-hover:bg-emerald-50 transition-colors duration-300">
                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <img
-                      src={getProductImage(product.ProductImage)}
+                      src={getProductImage(product)}
                       className="w-3/4 object-contain transform group-hover:scale-110 transition-transform duration-500"
                       alt={productName}
                     />
