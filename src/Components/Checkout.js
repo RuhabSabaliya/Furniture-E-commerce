@@ -74,7 +74,7 @@ export default function Checkout() {
 
           {/* Billing Details */}
           <div className="lg:w-7/12">
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div className="bg-white p-5 sm:p-8 rounded-xl shadow-sm border border-gray-100">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Billing Details</h2>
               <form className="space-y-6">
                 <div>
@@ -165,11 +165,11 @@ export default function Checkout() {
 
           {/* Order Summary */}
           <div className="lg:w-5/12">
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 sticky top-24">
+            <div className="bg-white p-5 sm:p-8 rounded-xl shadow-sm border border-gray-100 lg:sticky lg:top-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Your Order</h2>
 
               <div className="overflow-x-auto mb-6">
-                <table className="w-full text-left">
+                <table className="w-full min-w-[320px] text-left">
                   <thead>
                     <tr className="border-b border-gray-200">
                       <th className="pb-3 font-semibold text-gray-700">Product</th>
@@ -179,7 +179,7 @@ export default function Checkout() {
                   <tbody className="divide-y divide-gray-100">
                     {cartitem.map((item) => (
                       <tr key={item.id}>
-                        <td className="py-4 text-gray-600">
+                        <td className="py-4 pr-3 text-gray-600 break-words">
                           {getItemName(item)} <strong className="text-gray-900 mx-2">x {item.quantity}</strong>
                         </td>
                         <td className="py-4 text-gray-900 font-medium text-right">
@@ -197,15 +197,15 @@ export default function Checkout() {
               </div>
 
               <div className="space-y-4 mb-8">
-                <label className="flex items-center space-x-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                <label className="flex items-start gap-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
                   <input type="radio" name="payment" className="h-5 w-5 text-emerald-600 focus:ring-emerald-500" defaultChecked />
                   <span className="font-medium text-gray-900">Direct Bank Transfer</span>
                 </label>
-                <label className="flex items-center space-x-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                <label className="flex items-start gap-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
                   <input type="radio" name="payment" className="h-5 w-5 text-emerald-600 focus:ring-emerald-500" />
                   <span className="font-medium text-gray-900">Cheque Payment</span>
                 </label>
-                <label className="flex items-center space-x-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                <label className="flex items-start gap-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
                   <input type="radio" name="payment" className="h-5 w-5 text-emerald-600 focus:ring-emerald-500" />
                   <span className="font-medium text-gray-900">Paypal</span>
                 </label>

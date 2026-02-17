@@ -152,7 +152,7 @@ export default function Cart() {
                   {cartitem.map((item) => {
                     const lineTotal = parsePrice(getItemPrice(item)) * (item.quantity || 1);
                     return (
-                      <div key={item.id} className="p-4 flex flex-col md:grid md:grid-cols-12 gap-4 items-center">
+                      <div key={item.id} className="p-4 flex flex-col md:grid md:grid-cols-12 gap-4 items-start md:items-center">
 
                       {/* Product Info */}
                       <div className="col-span-6 w-full flex items-center gap-4">
@@ -175,13 +175,15 @@ export default function Cart() {
                       </div>
 
                       {/* Price */}
-                      <div className="col-span-2 text-gray-600 font-medium">
+                      <div className="col-span-2 w-full md:text-center text-gray-600 font-medium">
+                        <span className="block text-xs uppercase tracking-wide text-gray-400 md:hidden mb-1">Price</span>
                         {formatPrice(getItemPrice(item))}
                       </div>
 
                       {/* Quantity */}
-                      <div className="col-span-2">
-                        <div className="flex items-center justify-center border border-gray-300 rounded-lg overflow-hidden w-24 mx-auto md:mx-0">
+                      <div className="col-span-2 w-full md:w-auto">
+                        <span className="block text-xs uppercase tracking-wide text-gray-400 md:hidden mb-1">Quantity</span>
+                        <div className="flex items-center justify-center border border-gray-300 rounded-lg overflow-hidden w-24 mx-0 md:mx-auto">
                           <button
                             onClick={() => dispatch(decrementqty(item.id))}
                             className="w-8 h-8 flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors"
@@ -200,7 +202,8 @@ export default function Cart() {
                       </div>
 
                       {/* Total */}
-                      <div className="col-span-2 font-bold text-gray-900">
+                      <div className="col-span-2 w-full md:text-center font-bold text-gray-900">
+                        <span className="block text-xs uppercase tracking-wide text-gray-400 md:hidden mb-1">Total</span>
                         {formatPrice(lineTotal.toFixed(2))}
                       </div>
 
@@ -210,13 +213,13 @@ export default function Cart() {
                 </div>
               </div>
 
-              <div className="mt-6 flex justify-between items-center">
+              <div className="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                 <Link to="/Product" className="text-emerald-900 font-semibold hover:underline">
                   &larr; Continue Shopping
                 </Link>
                 <button
                   onClick={() => dispatch(clearcart())}
-                  className="text-gray-500 hover:text-gray-700 border border-gray-300 px-4 py-2 rounded-lg text-sm"
+                  className="w-full sm:w-auto text-gray-500 hover:text-gray-700 border border-gray-300 px-4 py-2 rounded-lg text-sm"
                 >
                   Clear Cart
                 </button>
@@ -225,7 +228,7 @@ export default function Cart() {
 
             {/* Cart Summary */}
             <div className="lg:w-1/3">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sticky top-24">
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 lg:sticky lg:top-24">
                 <h2 className="text-xl font-bold text-gray-900 mb-6 uppercase tracking-wide">Cart Totals</h2>
 
                 <div className="flex justify-between items-center mb-4 text-gray-600">

@@ -49,11 +49,11 @@ export default function Contact() {
               <p className="text-emerald-100 text-lg mb-8 leading-relaxed">
                 We'd love to hear from you. Whether you have a question about our products, pricing, or anything else, our team is ready to answer all your questions.
               </p>
-              <div className="flex gap-4">
-                <Link to="/Product" className="bg-white text-emerald-900 font-bold px-8 py-3 rounded-full hover:bg-emerald-50 transition-colors">
+              <div className="flex flex-wrap gap-4">
+                <Link to="/Product" className="w-full sm:w-auto text-center bg-white text-emerald-900 font-bold px-8 py-3 rounded-full hover:bg-emerald-50 transition-colors">
                   Shop Now
                 </Link>
-                <a href="#contact-form" className="border-2 border-white/30 text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition-colors">
+                <a href="#contact-form" className="w-full sm:w-auto text-center border-2 border-white/30 text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition-colors">
                   Explore
                 </a>
               </div>

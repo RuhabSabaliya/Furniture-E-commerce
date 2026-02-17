@@ -126,11 +126,11 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="bg-emerald-900 py-20 text-white">
+      <div className="bg-emerald-900 py-14 sm:py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
-            <div className="lg:w-5/12">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <div className="lg:w-5/12 text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
                 Modern Interior <span className="block text-emerald-200">Design Studio</span>
               </h1>
               <p className="mb-8 text-lg text-emerald-100 leading-relaxed">
@@ -138,11 +138,11 @@ export default function Home() {
                 aliquet velit. Aliquam vulputate velit imperdiet dolor tempor
                 tristique.
               </p>
-              <div className="flex gap-4">
-                <Link to="/Product" className="px-8 py-3 bg-yellow-400 text-emerald-900 font-bold rounded-full hover:bg-yellow-300 transition-colors shadow-lg">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Link to="/Product" className="w-full sm:w-auto text-center px-8 py-3 bg-yellow-400 text-emerald-900 font-bold rounded-full hover:bg-yellow-300 transition-colors shadow-lg">
                   Shop Now
                 </Link>
-                <Link to="/Product" className="px-8 py-3 border-2 border-emerald-200 text-white font-bold rounded-full hover:bg-emerald-800 hover:border-emerald-800 transition-colors">
+                <Link to="/Product" className="w-full sm:w-auto text-center px-8 py-3 border-2 border-emerald-200 text-white font-bold rounded-full hover:bg-emerald-800 hover:border-emerald-800 transition-colors">
                   Explore
                 </Link>
               </div>
@@ -210,7 +210,7 @@ export default function Home() {
                 velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
               </p>
 
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {[
                   { title: "Fast & Free Shipping", icon: "images/truck.svg" },
                   { title: "Easy to Shop", icon: "images/bag.svg" },
@@ -248,7 +248,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-16">
             <div className="lg:w-7/12 order-2 lg:order-1">
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <div className="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl">
                   <img src="images/img-grid-1.jpg" alt="Interior 1" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -295,7 +295,7 @@ export default function Home() {
               { name: "Kruzo Aero Chair", img: "images/product-2.png" },
               { name: "Ergonomic Chair", img: "images/product-3.png" }
             ].map((product, idx) => (
-              <div key={idx} className="flex gap-4 items-center bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all group">
+              <div key={idx} className="flex flex-col sm:flex-row gap-4 items-center text-center sm:text-left bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all group">
                 <div className="w-24 h-24 flex-shrink-0 bg-gray-100 rounded-lg flex items-center justify-center">
                   <img src={product.img} alt={product.name} className="w-20 h-20 object-contain group-hover:scale-110 transition-transform" />
                 </div>
@@ -339,9 +339,9 @@ export default function Home() {
       {/* Recent Blog */}
       <div className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
             <h2 className="text-3xl font-bold text-gray-900">Recent Blog</h2>
-            <Link to="/Blog" className="text-emerald-700 font-bold hover:text-emerald-900 hover:underline">
+            <Link to="/Blog" className="self-start sm:self-auto text-emerald-700 font-bold hover:text-emerald-900 hover:underline">
               View All Posts
             </Link>
           </div>

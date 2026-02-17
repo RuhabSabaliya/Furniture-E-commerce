@@ -132,7 +132,7 @@ export default function Wishlist() {
 
             <div className="divide-y divide-gray-100">
               {wishlistitem.map((item) => (
-                <div key={item.id} className="p-4 flex flex-col md:grid md:grid-cols-12 gap-4 items-center">
+                <div key={item.id} className="p-4 flex flex-col md:grid md:grid-cols-12 gap-4 items-start md:items-center">
 
                   {/* Product Info */}
                   <div className="col-span-6 w-full flex items-center gap-4">
@@ -149,27 +149,28 @@ export default function Wishlist() {
                   </div>
 
                   {/* Price */}
-                  <div className="col-span-3 text-gray-600 font-medium text-center">
+                  <div className="col-span-3 w-full md:text-center text-gray-600 font-medium">
+                    <span className="block text-xs uppercase tracking-wide text-gray-400 md:hidden mb-1">Price</span>
                     {formatPrice(item.price)}
                   </div>
 
                   {/* Actions */}
-                  <div className="col-span-3 flex justify-center gap-2">
+                  <div className="col-span-3 w-full flex flex-wrap md:flex-nowrap justify-start md:justify-center gap-2">
                     <Link
                       to={`/Productdetail/${item.id}`}
-                      className="bg-emerald-900 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-800 transition-colors"
+                      className="w-full sm:w-auto text-center bg-emerald-900 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-800 transition-colors"
                     >
                       View
                     </Link>
                     <button
                       onClick={() => dispatch(addtocart(item))}
-                      className="bg-emerald-900 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-800 transition-colors"
+                      className="w-full sm:w-auto text-center bg-emerald-900 text-white text-sm px-4 py-2 rounded-lg hover:bg-emerald-800 transition-colors"
                     >
                       Add to Cart
                     </button>
                     <button
                       onClick={() => dispatch(removewishlistitem(item.id))}
-                      className="bg-red-50 text-red-500 text-sm px-4 py-2 rounded-lg hover:bg-red-100 transition-colors"
+                      className="w-full sm:w-auto text-center bg-red-50 text-red-500 text-sm px-4 py-2 rounded-lg hover:bg-red-100 transition-colors"
                     >
                       Remove
                     </button>
@@ -179,13 +180,13 @@ export default function Wishlist() {
               ))}
             </div>
 
-            <div className="p-4 bg-gray-50 border-t flex justify-between items-center">
+            <div className="p-4 bg-gray-50 border-t flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <Link to="/Product" className="text-emerald-900 font-semibold hover:underline">
                 &larr; Continue Shopping
               </Link>
               <button
                 onClick={() => dispatch(clearwishlist())}
-                className="text-gray-500 hover:text-gray-700 border border-gray-300 px-4 py-2 rounded-lg text-sm"
+                className="w-full sm:w-auto text-gray-500 hover:text-gray-700 border border-gray-300 px-4 py-2 rounded-lg text-sm"
               >
                 Clear Wishlist
               </button>

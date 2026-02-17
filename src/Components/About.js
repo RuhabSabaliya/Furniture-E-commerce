@@ -17,11 +17,11 @@ export default function About() {
               <p className="text-emerald-100 text-lg mb-8 leading-relaxed">
                 Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
               </p>
-              <div className="flex gap-4">
-                <Link to="/Product" className="bg-white text-emerald-900 font-bold px-8 py-3 rounded-full hover:bg-emerald-50 transition-colors">
+              <div className="flex flex-wrap gap-4">
+                <Link to="/Product" className="w-full sm:w-auto text-center bg-white text-emerald-900 font-bold px-8 py-3 rounded-full hover:bg-emerald-50 transition-colors">
                   Shop Now
                 </Link>
-                <a href="#team" className="border-2 border-white/30 text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition-colors">
+                <a href="#team" className="w-full sm:w-auto text-center border-2 border-white/30 text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition-colors">
                   Our Team
                 </a>
               </div>
